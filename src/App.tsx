@@ -1,13 +1,8 @@
 import { useState, useEffect } from "react";
 import "./App.css";
+import { ExtensionsFound } from "./ExtensionsFound";
 
-import { useExtensions } from "@polkadot-cloud/react/hooks";
-
-import { Extensions, ExtensionsArray } from "@polkadot-cloud/assets/extensions";
-
-function App() {
-  const [count, setCount] = useState(0);
-
+const App = () => {
   const [theme, setTheme] = useState<string>("light");
 
   useEffect(() => {
@@ -16,25 +11,17 @@ function App() {
     }
   }, [theme]);
 
-  const { extensions, extensionsStatus } = useExtensions();
-
-  console.log("extensions", extensions);
-  console.log("extensionsStatus", extensionsStatus);
-  console.log("EXtnesion", Extensions, ExtensionsArray);
-
   return (
     <div className={`theme-polkadot-relay theme-${theme}`}>
-      <h1>Cloud tests</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
+        <h1>Cloud tests</h1>
         <button onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
-          Set theme to {theme === "light" ? "dark" : "light"}
+          Go to {theme === "light" ? "🌙" : "🌞"}
         </button>
+        <ExtensionsFound />
       </div>
     </div>
   );
-}
+};
 
 export default App;

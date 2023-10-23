@@ -2,23 +2,23 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+  padding: 0 !important;
 }
 
 body {
-  margin: 0;
   display: flex;
   place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
 }
 
 h1 {
@@ -26,9 +26,15 @@ h1 {
   line-height: 1.1;
 }
 
+.theme-polkadot-relay {
+  margin: 0 auto;
+  width: 100vw;
+  height: 100vh;
+}
+
 button {
   border-radius: 8px;
-  border: 1px solid transparent;
+  border: 1px solid black;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
@@ -42,44 +48,71 @@ button:hover {
 }
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: 1px auto -webkit-focus-ring-color;
 }
 
-/* @media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-} */
+ul li {
+  list-style: none;
+}
 
-// Mine
-
-.theme-light {
+/// LIGHT
+.theme-light :root {
   --accent-color-primary: var(--accent-color-primary-light);
 }
 
-.theme-light body {
-  background-color: var(--background-light);
+.theme-light {
+  background-color: #eee;
+}
+
+.theme-light button {
+  background-color: var(--background-dark);
+  border: 1 px solid black;
+  color: var(--background-dark);
 }
 
 .theme-light h1 {
   color: var(--accent-color-primary-light);
 }
 
-.theme-dark {
+.theme-light h3 {
+  color: var(--accent-color-primary-light);
+}
+
+.theme-light a {
+  color: var(--accent-color-secondary-dark);
+}
+
+.theme-light ul li {
+  color: black;
+}
+
+/// DARK
+.theme-dark :root {
   --accent-color-primary: var(--accent-color-primary-dark);
 }
 
-.theme-dark body {
-  background-color: var(--background-dark);
+.theme-dark {
+  background-color: #1b1616;
 }
 
 .theme-dark h1 {
-  color: var(--accent-color-invert-light);
+  color: var(--accent-color-secondary-dark);
+}
+
+.theme-dark h3 {
+  color: var(--accent-color-secondary-dark);
+}
+
+.theme-dark button {
+  background-color: var(--background);
+  border: 1px solid var(--accent-color-secondary-dark);
+  color: white;
+}
+
+.theme-dark ul li {
+  color: white;
+}
+
+.theme-dark a {
+  color: white;
 }

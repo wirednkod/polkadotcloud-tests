@@ -1,4 +1,3 @@
-import { StrictMode } from "React";
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 import {
@@ -13,15 +12,13 @@ import "@polkadot-cloud/core/theme/cloud/index.css";
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <ExtensionsProvider>
     <ExtensionAccountsProvider
-      dappName={"Notify me"}
-      network={"polkadot"}
+      dappName={"Something"}
+      network={"kusama"}
       ss58={0}
       activeAccount={null}
       setActiveAccount={() => {}}
     >
-      <StrictMode>
-        <App />
-      </StrictMode>
+      <App />
     </ExtensionAccountsProvider>
   </ExtensionsProvider>
 );
