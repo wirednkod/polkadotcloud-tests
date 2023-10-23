@@ -45,7 +45,7 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
+/* @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
@@ -56,7 +56,7 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
+} */
 
 // Mine
 
@@ -64,8 +64,8 @@ button:focus-visible {
   --accent-color-primary: var(--accent-color-primary-light);
 }
 
-.theme-light :root {
-  background-color: white;
+.theme-light body {
+  background-color: var(--background-light);
 }
 
 .theme-light h1 {
@@ -76,8 +76,8 @@ button:focus-visible {
   --accent-color-primary: var(--accent-color-primary-dark);
 }
 
-.theme-dark :root {
-  background-color: #242424;
+.theme-dark body {
+  background-color: var(--background-dark);
 }
 
 .theme-dark h1 {

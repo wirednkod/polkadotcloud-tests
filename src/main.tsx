@@ -20,9 +20,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
       setActiveAccount={() => {}}
     >
       <StrictMode>
-        <div className="theme-polkadot-relay theme-dark">
-          <App />
-        </div>
+        <App />
       </StrictMode>
     </ExtensionAccountsProvider>
   </ExtensionsProvider>
