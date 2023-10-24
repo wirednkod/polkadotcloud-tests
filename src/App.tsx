@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 import { ExtensionsFound } from "./ExtensionsFound";
+import { ConnectButton } from "./ConnectButton";
 
 const App = () => {
   const [theme, setTheme] = useState<string>("light");
@@ -18,6 +19,7 @@ const App = () => {
         <button onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
           Go to {theme === "light" ? "🌙" : "🌞"}
         </button>
+        <ConnectButton />
         <ExtensionsFound />
       </div>
     </div>
