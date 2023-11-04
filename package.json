@@ -10,26 +10,26 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@polkadot-cloud/assets": "^0.1.24",
-    "@polkadot-cloud/core": "^1.0.26",
-    "@polkadot-cloud/react": "^0.1.97",
-    "@polkadot-cloud/utils": "^0.0.22",
-    "@web3modal/wagmi": "^3.1.0",
+    "@polkadot-cloud/assets": "^0.1.34",
+    "@polkadot-cloud/core": "^1.0.42",
+    "@polkadot-cloud/react": "^0.1.120",
+    "@polkadot-cloud/utils": "^0.0.25",
+    "@web3modal/wagmi": "^3.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "viem": "^1.16.6",
+    "viem": "^1.18.4",
     "wagmi": "^1.4.5"
   },
   "devDependencies": {
-    "@types/react": "^18.2.15",
-    "@types/react-dom": "^18.2.7",
-    "@typescript-eslint/eslint-plugin": "^6.0.0",
-    "@typescript-eslint/parser": "^6.0.0",
-    "@vitejs/plugin-react-swc": "^3.3.2",
-    "eslint": "^8.45.0",
+    "@types/react": "^18.2.34",
+    "@types/react-dom": "^18.2.14",
+    "@typescript-eslint/eslint-plugin": "^6.9.1",
+    "@typescript-eslint/parser": "^6.9.1",
+    "@vitejs/plugin-react-swc": "^3.4.1",
+    "eslint": "^8.53.0",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.3",
-    "typescript": "^5.0.2",
-    "vite": "^4.4.5"
+    "eslint-plugin-react-refresh": "^0.4.4",
+    "typescript": "^5.2.2",
+    "vite": "^4.5.0"
   }
 }

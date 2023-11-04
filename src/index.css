@@ -43,19 +43,12 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 1px auto -webkit-focus-ring-color;
-}
 
 ul li {
   list-style: none;
 }
 
-/// LIGHT
+/* LIGHT */
 .theme-light :root {
   --accent-color-primary: var(--accent-color-primary-light);
 }
@@ -86,7 +79,7 @@ ul li {
   color: black;
 }
 
-/// DARK
+/* DARK */
 .theme-dark :root {
   --accent-color-primary: var(--accent-color-primary-dark);
 }
@@ -105,7 +98,7 @@ ul li {
 
 .theme-dark button {
   background-color: var(--background);
-  border: 1px solid var(--accent-color-secondary-dark);
+   /* border: 1px solid var(--accent-color-secondary-dark); */
   color: white;
 }
 

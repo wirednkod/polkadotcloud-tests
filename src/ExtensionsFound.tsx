@@ -1,20 +1,18 @@
-import {
-  useExtensionAccounts,
-  useExtensions,
-} from "@polkadot-cloud/react/hooks";
-
-import { ExtensionsArray } from "@polkadot-cloud/assets/extensions";
+// import {
+//   useExtensionAccounts,
+//   useExtensions,
+// } from "@polkadot-cloud/react/hooks";
 
 export const ExtensionsFound = () => {
-  const { extensions, extensionsStatus } = useExtensions();
-  const { extensionAccounts, connectExtensionAccounts } =
-    useExtensionAccounts();
+  // const {extensionsStatus} = useExtensions();
+  // const { connectExtensionAccounts } =
+  //   useExtensionAccounts();
 
   //   console.log("extensionsStatus", extensionsStatus);
   return (
     <>
-      <ul>
-        {extensions.map((x) => (
+      {/* <ul>
+        {extensionsStatus.map((x) => (
           <li key={x.id}>
             {x.title}:{" "}
             <a target="_blank" href={`http://${x.website}`}>
@@ -47,7 +45,7 @@ export const ExtensionsFound = () => {
             <p key={account.address}>{account.address}</p>
           ))}
         </li>
-      </ul>
+      </ul> */}
     </>
   );
 };

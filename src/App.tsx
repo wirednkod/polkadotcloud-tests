@@ -1,28 +1,47 @@
-import { useState, useEffect } from "react";
 import "./App.css";
-import { ExtensionsFound } from "./ExtensionsFound";
-import { ConnectButton } from "./ConnectButton";
+
+import { Connect } from "@polkadot-cloud/react";
+import { ConnectConfigProvider, connectInfo } from "@polkadot-cloud/react/recipes/Connect";
+
+
+import { createWeb3Modal, defaultWagmiConfig } from "@web3modal/wagmi/react";
+import { arbitrum, mainnet } from "wagmi/chains";
+import { DappInfo } from "@polkadot-cloud/react/types";
+import { Home } from "./Home";
+
+import { WagmiConfig } from "wagmi";
+// 1. Get projectId
+const projectId = "YOUR_PROJECT_ID";
+
+// 2. Create wagmiConfig
+const metadata = {
+  name: "Web3Modal",
+  description: "Web3Modal Example",
+  url: "https://web3modal.com",
+  icons: ["https://avatars.githubusercontent.com/u/37784886"],
+};
+
+const chains = [mainnet, arbitrum];
+const wagmiConfig = defaultWagmiConfig({ chains, projectId, metadata });
+
+createWeb3Modal({ wagmiConfig, projectId, chains });
 
 const App = () => {
-  const [theme, setTheme] = useState<string>("light");
-
-  useEffect(() => {
-    if (theme != "light" && theme != "dark") {
-      setTheme("light");
-    }
-  }, [theme]);
-
+  const dappInfo: DappInfo = {
+    dappName: "dApp Name",
+    network: "polkadot",
+    ss58: 0,
+  };
+  const providers = connectInfo(dappInfo);
+  
   return (
-    <div className={`theme-polkadot-relay theme-${theme}`}>
-      <div className="card">
-        <h1>Cloud tests</h1>
-        <button onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
-          Go to {theme === "light" ? "🌙" : "🌞"}
-        </button>
-        <ConnectButton />
-        <ExtensionsFound />
-      </div>
-    </div>
+    <ConnectConfigProvider dappInfo={dappInfo}>
+      <Connect providers={providers}>
+      <WagmiConfig config={wagmiConfig}>
+        <Home />
+      </WagmiConfig>
+      </Connect>
+    </ConnectConfigProvider>
   );
 };
 
