@@ -10,6 +10,8 @@ import { DappInfo } from "@polkadot-cloud/react/types";
 import { Home } from "./Home";
 
 import { WagmiConfig } from "wagmi";
+import { ApiPromise } from "@polkadot/api";
+import { ApiContext, useApiCreate } from "./contexts/ApiContext";
 // 1. Get projectId
 const projectId = "YOUR_PROJECT_ID";
 
@@ -27,6 +29,8 @@ const wagmiConfig = defaultWagmiConfig({ chains, projectId, metadata });
 createWeb3Modal({ wagmiConfig, projectId, chains });
 
 const App = () => {
+  const api: ApiPromise = useApiCreate()
+  
   const dappInfo: DappInfo = {
     dappName: "dApp Name",
     network: "polkadot",
@@ -38,7 +42,9 @@ const App = () => {
     <ConnectConfigProvider dappInfo={dappInfo}>
       <Connect providers={providers}>
       <WagmiConfig config={wagmiConfig}>
-        <Home />
+        <ApiContext.Provider value={api}>
+          <Home />
+        </ApiContext.Provider>
       </WagmiConfig>
       </Connect>
     </ConnectConfigProvider>
