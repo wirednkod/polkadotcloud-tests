@@ -8,7 +8,7 @@ import { EllipsisProps, IconProps, TitleProps } from "@polkadot-cloud/react/reci
 import { useApiCreate } from "./contexts/ApiContext";
 import { useLocalStorage } from "./contexts/useLocalStorage";
 import { usePrevious } from "./contexts/usePrevious";
-import { VoidFn } from "@polkadot-cloud/react/utils/types";
+// import { VoidFn } from "@polkadot-cloud/react/utils/types";
 
 const getFormat = (registry: Registry, formatIndex = 0): [number, string] => {
   const decimals = registry.chainDecimals;
@@ -42,7 +42,7 @@ export const Home = () => {
 
 
   useEffect(() => {
-    const unsubscribeAll: VoidFn | null = null
+    // const unsubscribeAll: VoidFn | null = null
 
     const getBalance = async () => {
       const isReady = await api?.isReady;
@@ -59,8 +59,8 @@ export const Home = () => {
     } 
     getBalance()
 
-    return () => unsubscribeAll && unsubscribeAll()      
-  }, [api?.isReady, api.query?.system, lclAccount])
+    // return () => unsubscribeAll && unsubscribeAll()      
+  }, [api?.isReady, api.query?.system, api?.registry, lclAccount])
 
   useEffect(() => {
     if (theme != "light" && theme != "dark") {
