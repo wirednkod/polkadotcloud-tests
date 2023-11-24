@@ -1,12 +1,12 @@
 import "./App.css";
 
-import { Connect } from "@polkadot-cloud/react";
-import { ConnectConfigProvider, connectInfo } from "@polkadot-cloud/react/recipes/Connect";
+import { Connect } from "@polkadot-cloud/recipes";
+import { ConnectConfigProvider, connectInfo } from "@polkadot-cloud/recipes/Connect";
 
 
 import { createWeb3Modal, defaultWagmiConfig } from "@web3modal/wagmi/react";
 import { arbitrum, mainnet } from "wagmi/chains";
-import { DappInfo } from "@polkadot-cloud/react/types";
+import { DappInfo } from "@polkadot-cloud/recipes/types";
 import { Home } from "./Home";
 
 import { WagmiConfig } from "wagmi";

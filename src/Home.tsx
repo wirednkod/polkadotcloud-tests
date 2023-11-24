@@ -2,9 +2,12 @@ import { useState, useEffect } from "react";
 import { ConnectButton } from "./ConnectButton";
 import type { Registry } from '@polkadot/types/types';
 import { useOverlay } from "@polkadot-cloud/react/hooks";
-import { Overlays, useActiveAccounts } from "@polkadot-cloud/react/recipes/Connect";
-import { AccountCard, Button, Grid } from "@polkadot-cloud/react";
-import { EllipsisProps, IconProps, TitleProps } from "@polkadot-cloud/react/recipes/AccountCard";
+import { Button, Grid } from "@polkadot-cloud/react";
+
+import { AccountCard } from "@polkadot-cloud/recipes";
+import { EllipsisProps, IconProps, TitleProps } from "@polkadot-cloud/recipes/AccountCard";
+import { Overlays, useActiveAccounts } from "@polkadot-cloud/recipes/Connect";
+
 import { useApiCreate } from "./contexts/ApiContext";
 import { useLocalStorage } from "./contexts/useLocalStorage";
 import { usePrevious } from "./contexts/usePrevious";
@@ -51,7 +54,7 @@ export const Home = () => {
         const { data: { free: currentFree }, nonce: currentNonce } = await api.query?.system.account(lclAccount);
         console.log('currentFree', currentFree, "currentNonce", currentNonce)
         
-        const f = getFormat(api?.registry)
+        const f = getFormat(api?.registry as unknown as Registry)
         console.log('f: ', f)
       
         setBalance(+currentFree)
